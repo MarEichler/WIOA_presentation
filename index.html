@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"> 
+<head> 
+  <title>R Shiny Apps</title> 
+  <link rel="stylesheet" type="text/css" media="screen, projection, print" href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" /> 
+  <link rel="stylesheet" type="text/css" media="screen, projection, print" href="www/styles.css" />
+<!--  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js" charset="utf-8" type="text/javascript"></script> -->
+  <script src="www/myslidy.js"  charset="utf-8" type="text/javascript"></script> 
+  <meta name="copyright" content="M. Y. Eichlersmith | March 29, 2022" />
+  <meta name="duration" content="10" />
+</head>
+<body>
+<!-- title page -->
+  <div class="slide titlepage">
+    <h1 class="title">R Shiny Apps</h1>
+    <p class="author">Martha Yvonne Eichlersmith<br><br><a href='https://myeichlersmith.com/'>myeichlersmith.com</a></p>
+    <p class="date">CSG Justice Center<br>March 29, 2022</p>
+  </div>
+<!-- about-this-presentation -->
+  <div id="about-this-presentation" class="slide section level1">
+    <h1>About this Presentation</h1>
+    <div class="row"> 
+      <div class="mycolumn" style="width: calc(60% - 1em - 2px);">
+        <ul>
+          <li>Presentation is a <a href="https://www.w3.org/Talks/Tools/Slidy2/">slidy presentation</a></li>
+          <li>Can create <a href="https://garrettgman.github.io/rmarkdown/slidy_presentation_format.html">slidy presentation via Rmd file</a></li>
+          <li>Since this presentation doesn't run any code, it's done in HTML file</li>
+          <li>Link of presentation will be active until the end of the day, then repository will be made private</li>
+        </ul>
+      </div><!-- end mycolumn66  -->
+      <div class="mycolumn" style="width: calc(40% - 1em - 2px);">
+        <p class="linklst">
+        <a href='https://github.com/MarEichler/CSG_presentation'>
+          <img class = 'icon' src='www/img/github-brands.svg' alt='GitHub Icon'>github.com/MarEichler/CSG_presentation
+        </a><br>
+        <a href='https://MarEichler.github.io/CSG_presentation'>
+          <img class = 'icon' src='www/img/globe-solid.svg' alt='PDF file Icon'>MarEichler.github.io/CSG_presentation
+        </a><br>
+        </p>
+      </div><!-- end mycolumn  -->
+    </div><!-- rend row  -->
+  </div><!-- end slide about-this-presentation -->
+<!-- wioa-by-the-numbers-background -->
+  <div id="wioa-by-the-numbers-background" class="slide section level1">
+    <h1>WIOA by the Numbers: Background</h1>
+    <div class="row">
+      <div class="mycolumn">
+        <h2 class="colheader">WIOA</h2>
+        <ul>
+          <li>Workforce Innovation and Opportunity Act signed into law in 2014</li>
+          <li>WIOA requires programs to certain data following the PIRL</li>
+          <li>PIRL: Participant Integrated Reporting Layout (a BUNCH of data!)
+            <ul>
+              <li>500+ data items (demographic, services, outcomes)</li>
+              <li>Data is updated after leave program to see if they are employed/earnings/etc.</li>
+              <li>each program requires a certain subset of the PIRL (don’t report all 500)</li>
+              <li>Data is used to create performance metrics</li>
+            </ul> <!-- end sublist --> 
+          </li><!-- end main list item -->
+        </ul> <!-- end main list -->
+       </div><!-- end column -->
+    <div class="mycolumn">
+      <h2 class="colheader">Data Dissemination</h2>
+        <b>Annual Data Book</b>
+        <ul>
+          <li>PDF or Excel tables available for download</li>
+          <li>Aggregate information (counts/outcomes); with specific cross-sections of data</li>
+          <li>Tables shown by program (Adult, Youth, Dislocated Worker, Wagner-Peyser)</li>
+        </ul><!-- end sub list -->
+        <b>Public Use File of PIRL data</b>
+        <ul>
+          <li>Strip out certain PII</li>
+          <li>Individual level information </li>
+          <li>Millions of records, zip file ~1GB, csv file ~10GB</li>
+          <li>Due to size of file, inaccessible to casual user</li>
+        </ul><!-- end sub list -->
+    </div><!-- end column --> 
+    <div class="mycolumn">
+      <h2 class="colheader">App Goals</h2>
+      <ol style = "margin:0 !important;">
+        <li><b>Access:</b> accessible to casual user and those within workforce organizations (local, state, federal); allow states to get their data and a visualization easily and quickly</li>
+        <li><b>Queries:</b> Run data queries and download resulting data</li>
+        <li><b>Comparison:</b> Compare states to each other and to national metrics</li>
+        <li><b>Step Forward:</b> First step towards encouraging more funding for data/visualization projects in DOL/ETA</li>
+      </ol>
+    </div><!-- end column --> 
+    </div><!-- end row --> 
+  </div><!-- end slide wioa-by-the-numbers-background -->
+<!-- wioa-by-the-numbers-app -->
+  <div id="wioa-by-the-numbers-app" class="slide section level1">
+    <h1>WIOA by the Numbers: App</h1>
+    <ul>
+      <li>Current Live App: <a href="https://spra.shinyapps.io/LIVE-WIOAPerformance/">spra.shinyapps.io/LIVE-WIOAPerformance</a></li>
+      <li>Embedded App on DOL/ETA Website: <a href="https://www.dol.gov/agencies/eta/performance/results/interactive-data-analysis">
+        dol.gov/agencies/eta/performance/results/interactive-data-analysis</a></li>
+    </ul><!-- end list --> 
+    <div class="mycolumn" style="width: calc(25% - 1em - 2px);">
+      <h2 class="colheader">1. Access</h2>
+      <ul>
+        <li>Data by Map uses hex maps
+          <ul>
+            <li>Each geography as its own workforce area</li>
+            <li>Values and color</li>
+          </ul></li>
+        <li>Download map/plot; ETA expects to see images in states' reports</li>
+        <li>Download data query or data from plot as xlsx with full column names</li>
+        <li>Download all data as a csv with abbreviated column names (no spaces/specials)</li>
+      </ul><!-- end list -->
+    </div> <!-- end column --> 
+    <div class="mycolumn" style="width: calc(25% - 1em - 2px);">
+      <h2 class="colheader">2. Queries</h2>
+      <ul>
+        <li>Download data that created a specific map/plot</li>
+        <li>Copy data query, download data query as xlsx, or download all data as csv</li>
+        <li>Copy/Download data queries include a title row denoting what has been selected/searched to get data</li>
+      </ul><!-- end list -->
+    </div> <!-- end column --> 
+    <div class="mycolumn" style="width: calc(25% - 1em - 2px);">
+      <h2 class="colheader">3. Comparison</h2>
+      <ul>
+        <li>State Comparison tab</li>
+        <li>Compare by ETA region</li>
+        <li>Manually select which states or territories to compare</li>
+        <li>Can use checked box to include USA national values</li>
+      </ul><!-- end list -->
+    </div> <!-- end column --> 
+    <div class="mycolumn" style="width: calc(25% - 1em - 2px);">
+      <h2 class="colheader">4. Step Forward</h2>
+      <ul>
+        <li>Look at aggregate data at state-level, 8 performance measures</li>
+        <li>When presenting app to DOL leadership, have ideas/request for what will be included in the next version
+          <ul>
+            <li>Dis-aggregate performance metrics by demographics (gender/race/other categories)</li>
+            <li>Explore other data within the PIRL</li>
+          </ul>
+        </li>
+      </ul><!-- end list -->
+    </div> <!-- end column --> 
+  </div> <!-- end slide wioa-by-the-numbers-app -->
+<!-- wioa-by-the-numbers-app-demo -->
+  <div id="wioa-by-the-numbers-app-demo" class="slide section level1">
+    <h1 class="hide">WIOA by the Numbers: Demo</h1> 
+    <iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" 
+      src="https://spra.shinyapps.io/LIVE-WIOAPerformance/" 
+      style="min-height:1350px; width:100%; display:block; line-height:0;"
+      vspace="0">
+    </iframe>
+  </div><!-- end wioa-by-the-numbers-app-demo --> 
+<!-- personal-app -->
+  <div id="personal-app" class="slide section level1">
+    <h1>Personal App</h1>
+    <div class="mycolumn" style = "width: calc(60% - 1em - 2px);">
+      <ul>
+        <li>Built the majority of the WIOA app in 4 months, with limited R shiny experience</li>
+        <li>Learned about R Shiny best practices add, WIOA app was already completed (project was ending)</li>
+        <li>Use personal (<i>incredibly unique</i>) COVID19 app: 
+          <ul>
+            <li>Create shiny modules (per <a href="https://mastering-shiny.org/">Mastering Shiny</a>)</li>
+            <li>Build {box} modules; <a href="https://mareichler.github.io/rladies_box_intro/">R Ladies {box} Intro presentation</a></li>
+            <li>Customize fonts</li>
+            <li>Mangaing large amount of data (vroom/datatable vs tibble/dataframe; pulling data no more than once a day, 
+                still takes ~30-60 seconds)</li>
+            <li><i>Future Improvement:</i> github actions to make data pull seperate from app instead within app, 
+                help save time for user given how much time it takes to pull data</li>
+          </ul> <!-- end sublist -->
+        </li> <!-- end main list item -->
+        <li>Code from personal COVID-19 app is more accurate to my technical capabilities</li>
+      </ul><!-- end main list -->
+    </div><!-- end column -->
+    <div class="mycolumn" style="width: calc(40% - 1em - 2px);">
+      <h2 class="colheader">Links</h2>
+      <p class="linklst">
+        <a href='https://github.com/MarEichler/covid19_app'>github.com/MarEichler/covid19_app</a><br>
+        <a href='https://mareichler.shinyapps.io/covid19/'>mareichler.shinyapps.io/covid19</a><br>
+        <a href='https://github.com/MarEichler/us_hex_map'>github.com/MarEichler/us_hex_map</a>
+      </p><!-- end link lst --> 
+    </div><!-- end column -->
+  </div><!-- end slide app-code -->
+<!-- covid-app-demo -->
+  <div id="covid-app-demo" class="slide section level1">
+    <h1 class="hide">Personal App: Demo</h1> 
+    <iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" 
+      src="https://mareichler.shinyapps.io/covid19/" 
+      style="min-height:1350px; width:100%; display:block; line-height:0;"
+      vspace="0">
+    </iframe>
+  </div><!-- end covid-app-demo --> 
+</body>
+</html>
