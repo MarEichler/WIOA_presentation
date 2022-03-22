@@ -293,3 +293,43 @@ img.myemoji {
   height: 35px;
   padding: 2px;
 }
+
+
+/**** GRID LAYOUT    ****/
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid var(--darkgrey);
+    margin-top:; 0.35em; 
+    margin-bottom: 0.15em;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+    padding: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 17% 3.75% 17% 3.75% 17% 3.75% 17% 3.75% 17%;
+  padding: 0px;
+}
+.grid-item {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  text-align: center;
+  background-color: var(--liteblue);
+  padding: 0.5em 0.25em;
+  font-size: 1em;
+  border-radius: 25px;
+}
+
+.gridarrow {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5em;
+  color: var(--darkblue);
+}
