@@ -92,23 +92,48 @@
 <!-- wioa-by-the-numbers-role -->
   <div id="wioa-by-the-numbers-role" class="slide section level1">
     <h1>WIOA by the Numbers: Role</h1>
-    <ul>
-      <li>R Shiny application
-        <ul>
-          <li>R Shiny code</li>
-          <li>R code</li>
-          <li>HTML/CSS</li>
-        </ul><!-- end sublist -->
-      </li><!-- end main list item -->
-      <li>Sole project for about 4 months </li>
-      <li>Check-in with ETA clients at regular meetings
-        <ul>
-          <li>Presented plots/apps at each stage</li>
-          <li>Explained app structure and features; answered questions</li>
-          <li>Responded to requests for changes or additional features (inform ETA whether request was possible and why)</li>
-        </ul><!-- end sublist -->
-      </li><!-- end main list item -->
-    </ul> <!-- end main list -->
+    <div class="mycolumn">
+      <h2 class="colheader">Code</h2>
+      <ul>
+        <li>R Shiny code</li>
+        <li>R code</li>
+        <li>HTML/CSS</li>
+        <li>SAS (public use file &#8594; outcomes by state/program csv)</li>
+      </ul>
+    </div> <!-- end column -->
+    <div class="mycolumn">
+      <h2 class="colheader">R Shiny App</h2>
+      <ul>
+        <li>Start with <a href="https://leadcenter.org/workforce-development/wioa-data-visualization-tool/">ODEP LEAD centerapp</a></li>
+        <li>Strip out all table/map code to have a skelton app stand-up</li>
+        <li>Refactor remaining app structure and styling (CSS)</li>
+        <li>Built functions to
+          <ul>
+            <li>Create hex maps </li> 
+            <li>Create joint (by program) hex maps</li> 
+            <li>Create state comparison line chart</li> 
+            <li>Determine legned ranges and breaks</li> 
+            <li>Export custom xlsx with title row detailing informaiton selected</li> 
+            <li>Create alt-text for images</li> 
+          </ul>
+        </li>
+        
+      </ul>
+    </div> <!-- end column -->
+    <div class="mycolumn">
+      <h2 class="colheader">Working Group</h2>
+      <ul>
+        <li>Sole project for about 4 months </li>
+        <li>Check-in with ETA clients at regular meetings
+          <ul>
+            <li>Presented plots/app at each stage</li>
+            <li>Explained app structure and features; answered questions</li>
+            <li>Responded to requests for changes or additional features (inform ETA whether request was possible and why)</li>
+          </ul><!-- end sublist -->
+        </li><!-- end main list item -->
+        <li>Presented final app to DOL/ETA Leadership and other stakeholders</li>
+      </ul> <!-- end main list -->
+    </div> <!-- end column -->
   </div><!-- end slide wioa-by-the-numbers-role -->
 <!-- wioa-by-the-numbers-data-pipeline -->
   <div id="wioa-by-the-numbers-data-pipeline" class="slide section level1">
@@ -147,7 +172,7 @@
     <div class="gridarrow">&#10140;</div>
     <div class="grid-item">
       <div>Rewrote as R code to create shp files<br><hr/><span style="font-size:0.80em">
-        <a href="https://github.com/MarEichler/us_hex_map">MarEichler/us_hex_map</a><br><br></span></div>
+        <a href="https://github.com/MarEichler/usahex">MarEichler/usahex</a><br><br></span></div>
     </div><!-- end grid-item -->
     <div class="gridarrow">&#10140;</div>
     <div class="grid-item">
