@@ -269,30 +269,26 @@ table.mytable {
 }
 
 table.mytable td {
-  text-align: center; 
+  text-align: left; 
   vertical-align: top;
   font-size: 0.7em;
 }
 
 table.mytable th {
+  text-align: left;
+  vertical-align: bottom;
   font-size: 0.9em !important;
-}
-
-table.mytable td.fst {
-  text-align: left !important;
-  font-weight: bold; 
-  font-size: 0.9em !important;
+  color: var(--darkblue);
+  font-variant: small-caps;
+  border-bottom: 5px solid var(--litegrey);
+  
 }
 
 table.mytable td, th {
-  border: 2px solid #585858;
-  padding: 5px;
+  padding: 5px 10px;
+  border-bottom: 2px solid var(--litegrey);
 }
 
-img.myemoji {
-  height: 35px;
-  padding: 2px;
-}
 
 
 /**** GRID LAYOUT    ****/

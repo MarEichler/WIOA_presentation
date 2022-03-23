@@ -39,6 +39,43 @@
         </p>
       </div><!-- end mycolumn  -->
     </div><!-- rend row  -->
+    <h2>Abbreviation</h2>
+    <table class="mytable">
+      <tr> <!-- header row -->
+        <th>Abbreviation</th>
+        <th>Meaning</th>
+        <th>Description</th>
+      </tr><!-- end header row -->
+      <tr><!-- row DOL -->
+        <td>DOL</td>
+        <td>Department of Labor</td>
+        <td>Federal departmant reponsible for administration of federal laws concerning labor<br>
+          <a href="https://www.dol.gov/general/dol-agencies">More Info</a></td>
+      </tr><!-- end row DOL -->
+      <tr><!-- row ETA -->
+        <td>ETA</td>
+        <td>Employment and Training Administration</td>
+        <td>Part of DOL, mission is to provide training, employment, labor market information, and other services<br>
+          <a href="https://www.dol.gov/agencies/eta/about">More Info</a></td>
+      </tr><!-- end row ETA -->
+      <tr><!-- row PII -->
+        <td>PII</td>
+        <td>Personally Identifiable Information</td>
+        <td>Data that can be used to identify an individual (name, date of birth, social security number, etc.)<br><br></td>
+      </tr><!-- end row PIRL -->
+      <tr><!-- row PIRL -->
+        <td>PIRL</td>
+        <td>Participant Individual Record Layout</td>
+        <td>List of different reporting items to be collected from participants in DOL's programs<br>
+          <a href="https://www.dol.gov/agencies/eta/performance/reporting">More Info</a></td>
+      </tr><!-- end row PIRL -->
+      <tr><!-- row WIOA -->
+        <td>WIOA</td>
+        <td>Workforce Innovation and Opportunity Act</td>
+        <td>Federal workforce development legislation, signed into law in 2014<br>
+          <a href="https://www.dol.gov/agencies/eta/wioa/">More Info</a></td>
+      </tr><!-- end row WIOA -->
+    </table><!-- end table -->
   </div><!-- end slide about-this-presentation -->
 <!-- wioa-by-the-numbers-background -->
   <div id="wioa-by-the-numbers-background" class="slide section level1">
@@ -53,11 +90,11 @@
               <li>Department of Education</li>
             </ul>
           </li><!-- end main list item --> 
-          <li>PIRL: Participant Integrated Reporting Layout (a BUNCH of data!)
+          <li>PIRL data (a BUNCH of data!)
             <ul>
               <li>500+ data items (demographic, services, outcomes)</li>
-              <li>Data is collected from participants when enter program and after they 'exit' </li>
-              <li>Data is aggregated to calculated performance metrics</li>
+              <li>Data collected from participants when they enter program and after they 'exit' a program</li>
+              <li>Data is aggregated to calculate performance metrics</li>
             </ul> <!-- end sublist --> 
           </li><!-- end main list item -->
         </ul> <!-- end main list -->
@@ -66,8 +103,8 @@
       <h2 class="colheader">DOL's Data Dissemination</h2>
         <b>Annual Data Book</b>
         <ul>
-          <li>PDF or Excel tables available for download (460+ pages)</li>
-          <li>Aggregate information (counts/outcomes); with specific cross-sections of data</li>
+          <li>PDF/Excel tables available for download (460+ pages)</li>
+          <li>Aggregate counts/outcomes; specific cross-sections of data</li>
           <li>Tables shown for each program (core programs: Adult, Youth, Dislocated Worker, Wagner-Peyser)</li>
         </ul><!-- end sub list -->
         <b>Public Use File of PIRL data</b>
@@ -75,6 +112,7 @@
           <li>Strip out certain PII</li>
           <li>Individual level information </li>
           <li>Millions of records, csv file ~10GB</li>
+          <li>Includes 10 quarters worth of data (2.5 years) </li>
           <li>Due to size of file, inaccessible to casual user</li>
         </ul><!-- end sub list -->
     </div><!-- end column --> 
@@ -105,15 +143,15 @@
       <h2 class="colheader">R Shiny App</h2>
       <ul>
         <li>Start with <a href="https://leadcenter.org/workforce-development/wioa-data-visualization-tool/">ODEP LEAD centerapp</a></li>
-        <li>Strip out all table/map code to have a skelton app stand-up</li>
+        <li>Strip out all table/map code to have a skeleton app stand-up</li>
         <li>Refactor remaining app structure and styling (CSS)</li>
         <li>Built functions to
           <ul>
             <li>Create hex maps </li> 
             <li>Create joint (by program) hex maps</li> 
             <li>Create state comparison line chart</li> 
-            <li>Determine legned ranges and breaks</li> 
-            <li>Export custom xlsx with title row detailing informaiton selected</li> 
+            <li>Determine legend ranges and breaks</li> 
+            <li>Export custom xlsx with title row detailing information selected</li> 
             <li>Create alt-text for images</li> 
           </ul>
         </li>
